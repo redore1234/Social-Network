@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    </head>
+    <body>
+        <center>
+            <h1>Login Page</h1>
+        </center>
+    
+        <form action="DispatchController" method="POST">
+            <table border="0" align="center">
+                <tr>
+                    <th align="right">Email</th>
+                    <td>
+                        <input type="text" name="txtEmail" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right">Password</th>
+                    <td>
+                        <input type="password" name="txtPassword" value="" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" align="right"> 
+                        <input type="submit" value="Login" name="btnAction"/>
+                    </td> 
+                </tr>
+            </table>
+            <br/>
+        </form>
+            <div align="center">
+                Don't have the account?<a href="register.html"> Register here</a>
+            </div>
+    </body>
+</html>

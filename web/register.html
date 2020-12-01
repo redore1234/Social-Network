@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    </head>
+    <body>
+        <h1>Register Page</h1>
+        
+        <form action="DispatchController" method="POST">
+            <table border="0">
+                <tr>
+                    <th align="right">Email</th>
+                    <td>
+                        <input type="text" name="txtEmail" value="" /> (e.g 12-50 chars)
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right">Name</th>
+                    <td>
+                        <input type="text" name="txtName" value="" /> (e.g 8-50 chars)
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right">Password</th>
+                    <td>
+                        <input type="password" name="txtPassword" value="" /> (e.g 8-50 chars)
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right">Confirm Password</th>
+                    <td>
+                        <input type="password" name="txtConfirmPassword" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" align="right">
+                        <input type="submit" value="Register" name="btnAction"/> <br/>
+                    </td>
+                </tr>
+            </table>
+
+            <div>
+                Want to login again?<a href="login.html"> Try again</a> <br/>
+            </div>
+        </form>
+    </body>
+</html>
