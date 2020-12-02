@@ -22,7 +22,7 @@ It's required some libraries as following and the link you can download it: http
  - jstl-impl.jar
  - log4j-1.2.17.jar
  - sqljdbc42.jar
-	Access google
+	- Access google
  - commons-logging-1.2.jar
  - fluent-hc-4.5.5.jar
  - gson-2.8.2.jar
