@@ -13,16 +13,22 @@ This repo contains the source code of Lab Java Web Application - Social Network 
 - Using data source into Java Web App
 
 ### How to use this?
-It's required some libraries as following and the link you can download it: https://drive.google.com/drive/u/1/folders/1d-Dm1hqhVYlQQkP4wIaXunK0Ea9uqdbQ
+It's required some libraries as following and the link you can download it: https://drive.google.com/file/d/1GBePx-cxAtPjYpXGNyuDqkGolhNA9GT8/view?usp=sharing
 
-	It's about 6 file jar:
+	It's about 11 file jar:
  - activation.jar
  - javax.mail.jar
  - jstl-api.jar
  - jstl-impl.jar
  - log4j-1.2.17.jar
  - sqljdbc42.jar
- 
+	Access google
+ - commons-logging-1.2.jar
+ - fluent-hc-4.5.5.jar
+ - gson-2.8.2.jar
+ - httpclient-4.5.5.jar
+ - httpcore-4.4.9.jar
+
  ### Connect me via
 - [GitHub](https://github.com/redore1234)
 - [Gmail](mailto:ptlong0311@gmail.com)

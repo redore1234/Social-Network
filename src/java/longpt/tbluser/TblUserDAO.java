@@ -24,8 +24,6 @@ import org.apache.log4j.Logger;
  */
 public class TblUserDAO implements Serializable {
 
-    private final static Logger logger = Logger.getLogger(TblUserDAO.class);
-
     public TblUserDTO checkLogin(String email, String password) throws SQLException, NamingException {
         Connection con = null;
         PreparedStatement stm = null;
@@ -82,7 +80,7 @@ public class TblUserDAO implements Serializable {
                         verify.verifyEmail();
                     } catch (MessagingException ex) {
                         System.out.println(ex.getMessage());
-                        logger.error("TblUserDAO: " + ex.getMessage());
+                        //logger.error("TblUserDAO: " + ex.getMessage());
                     }
                     return true;
                 }
