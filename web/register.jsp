@@ -10,11 +10,69 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
         <title>Register</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/customize.css">
     </head>
     <body>
-        <h1>Register Page</h1>
+        <div class="container-fluid h-100 bg-custom">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="card col-10 col-md-8 col-lg-6 p-5">
+                    <div class="text-center pb-3">
+                        <h1>Register Page</h1>
+                    </div>
+                    
+                    <form action="DispatchController" method="POST">
+                        <c:set var="errors" value="${requestScope.ERRORS}"/>
+                        
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" placeholder="abc@gmail.com" name="txtEmail" 
+                                   value="${param.txtEmail}" />
+                            <small  class="text-muted">Must be 12-50 chars</small>
+                            <p class="text-danger"> ${errors.emailIsEmpty} </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Your name" name="txtName" 
+                                   value="${param.txtName}" />
+                            <small  class="text-muted">Must be 8-50 chars</small>
+                            <p class="text-danger"> ${errors.nameIsEmpty} </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="txtPassword" 
+                                   value="" />
+                            <small  class="text-muted">Must be 8-50 chars</small>
+                            <p class="text-danger"> ${errors.passwordIsEmpty} </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" name="txtConfirmPassword" 
+                                   value="" />
+                            <small  class="text-muted">Match to Password</small>
+                            <p class="text-danger">  ${errors.passwordIsNotMatch} </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Register" name="btnAction" />
+                            <input type="reset" class="btn btn-primary" value="Reset" />
+                            <p class="text-danger"> ${errors.emailIsExisted} </p>
+                        </div>
+                    </form>
+                        
+                    <div class="text-center">
+                        Want to login again?<a href="login.html"> Try again</a> <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<%--        <h1>Register Page</h1>
     
         <form action="DispatchController" method="POST">
             <c:set var="errors" value="${requestScope.ERRORS}"/>
@@ -96,6 +154,6 @@
             <div>
                 Want to login again?<a href="login.html"> Try again</a> <br/>
             </div>
-        </form>
+        </form>--%>
     </body>
 </html>
