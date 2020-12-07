@@ -54,7 +54,6 @@ public class EmotionArticleServlet extends HttpServlet {
         if (id != null) {
             articleId = Integer.parseInt(id);
         }
-        
         String email = request.getParameter("txtEmailId");
         
         try {

@@ -55,35 +55,35 @@ public class LoginGoogleServlet extends HttpServlet {
             if (code != null && !code.isEmpty()) {
                 String accessToken = GoogleUtils.getToken(code);
                 GooglePojo googlePojo = GoogleUtils.getUserInfo(accessToken);
-                
+
                 TblUserDAO dao = new TblUserDAO();
                 String encrypted = dao.encryptPassword("012345678");
-                
+
                 HttpSession session = request.getSession();
                 if (session != null) {
                     String email = googlePojo.getEmail();
-                    
+
                     if (dao.checkLogin(email, encrypted) == null) {
                         dao.createNewAccount(googlePojo.getEmail(), googlePojo.getEmail(), encrypted, 2);
+                    } else {
+                        TblUserDTO dto = new TblUserDTO();
+                        dto.setName(googlePojo.getEmail());
+                        dto.setEmail(googlePojo.getEmail());
+
+                        session.setAttribute("ACCOUNT", dto);
+
+                        url = HOME_PAGE;
                     }
-                    
-                    TblUserDTO dto = new TblUserDTO();
-                    dto.setName(googlePojo.getEmail());
-                    dto.setEmail(googlePojo.getEmail());
-                    
-                    session.setAttribute("ACCOUNT", dto);
-                    
-                    url = HOME_PAGE;
                 }
             } else {
                 url = INVALID_PAGE;
             }
         } catch (SQLException ex) {
-            logger.error("Login Servlet SQLException: " + ex.getMessage());
+            logger.error("LoginGoogle Servlet SQLException: " + ex.getMessage());
         } catch (NamingException ex) {
-            logger.error("Login Servlet NamingException: " + ex.getMessage());
+            logger.error("LoginGoogle Servlet NamingException: " + ex.getMessage());
         } catch (NoSuchAlgorithmException ex) {
-            logger.error("Login Servlet NoSuchAlgorithmException: " + ex.getMessage());
+            logger.error("LoginGoogle Servlet NoSuchAlgorithmException: " + ex.getMessage());
         } finally {
             response.sendRedirect(url);
             out.close();

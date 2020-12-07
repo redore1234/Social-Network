@@ -70,7 +70,7 @@ public class PostArticleServlet extends HttpServlet {
                 String fileName = fileImage.getSubmittedFileName();
                 if (fileName.contains(".jpg") || fileName.contains(".png")) {
                     fileInputStream = fileImage.getInputStream();
-                    fileInputStream.close();
+                    //fileInputStream.close();
                 } else { 
                     foundErr = true;
                     request.setAttribute("IMAGE_ERROR", "Please choose image with *.jpg or *.png extension");
@@ -88,6 +88,7 @@ public class PostArticleServlet extends HttpServlet {
         } catch (NamingException ex) {
             logger.error("PostServlet NamingException: " + ex.getMessage());
         } finally {
+            fileInputStream.close();
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
             out.close();
